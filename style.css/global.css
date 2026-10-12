@@ -5,6 +5,7 @@
     --blue-light: hsl(235, 18%, 26%);
     --red: hsl(4, 100%, 67%);
     --gradient: linear-gradient(hsl(15, 100%, 61%), hsl(346, 100%, 66%));
+    /*Fluid header text breaks to two lines between 612px width and 646px width*/
     --fluid-header: clamp(2.5rem, 2.147887323943662rem + 1.5023474178403755vw, 3.5rem);
 }
 
@@ -62,7 +63,6 @@ h6 {
 }
 
 .newsletter-container {
-    /* border: 3px solid green; */
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -79,26 +79,37 @@ h6 {
     padding: 16px;
 }
 
+.wrapper picture {
+    margin-block-end: 40px;
+}
+
 .newsletter__description {
-    /* border: 2px solid crimson; */
+    text-align: left;
 }
 
 .newsletter__description>h1 {
-    margin-bottom: 24px;
+    margin-block-end: 24px;
 }
 
 .newsletter__description>p {
+    margin-block-end: 24px;
+}
+
+.newsletter__email-input-inner-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+form input {
     margin-bottom: 24px;
-}
-
-.newsletter__form-inputs {
-    /* border: 2px solid blue; */
-}
-
-input {
     padding: 16px;
     border-radius: 10px;
     border-color: var(--grey);
+    border: 1px solid var(--grey);
+}
+
+form label {
+    margin-block-end: 8px;
 }
 
 button {
@@ -112,16 +123,25 @@ button {
     margin-bottom: 24px;
 }
 
+button:hover {
+    background-image: var(--gradient);
+    box-shadow: 0 10px 25px -5px var(--red);
+    cursor: pointer;
+}
+
 h1 {
     font-size: var(--fluid-header);
 }
 
 ul {
     all: revert;
+    padding-inline-start: 25px;
 }
 
 li {
     list-style-image: url("../assets/images/icon-list.svg");
+    padding-inline-start: 16px;
+    margin-block-end: 8px;
 }
 
 .newsletter__email-input-container {
@@ -136,11 +156,20 @@ li {
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
+
+    .newsletter-container {
+        max-width: 608px;
+    }
+
     .wrapper {
         /* width: calc(100% - 80px); */
         width: 100%;
         max-width: 530px;
         padding: 40px;
+    }
+
+    form input {
+        margin-block-end: 16px;
     }
 }
 
@@ -166,5 +195,9 @@ li {
 
     picture {
         grid-area: image;
+    }
+
+    form input {
+        margin-bottom: 16px;
     }
 }
