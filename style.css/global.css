@@ -5,6 +5,7 @@
     --blue-light: hsl(235, 18%, 26%);
     --red: hsl(4, 100%, 67%);
     --gradient: linear-gradient(hsl(15, 100%, 61%), hsl(346, 100%, 66%));
+    --fluid-header: clamp(2.5rem, 2.147887323943662rem + 1.5023474178403755vw, 3.5rem);
 }
 
 body {
@@ -61,10 +62,58 @@ h6 {
 }
 
 .newsletter-container {
+    /* border: 3px solid green; */
     display: flex;
     flex-direction: column;
-    /* REMOVE BORDER STYLES */
-    border: 5px solid green;
+    border-radius: 15px;
+    margin-inline: auto;
+    background-color: var(--white);
+    width: clamp(320px, 50vw, 905px);
+}
+
+.wrapper {
+    /* border: 2px solid orangered; */
+    margin-inline: auto;
+    /* width: calc(100% - 32px); */
+    width: 100%;
+    padding: 16px;
+}
+
+.newsletter__description {
+    /* border: 2px solid crimson; */
+}
+
+.newsletter__description>h1 {
+    margin-bottom: 24px;
+}
+
+.newsletter__description>p {
+    margin-bottom: 24px;
+}
+
+.newsletter__form-inputs {
+    /* border: 2px solid blue; */
+}
+
+input {
+    padding: 16px;
+    border-radius: 10px;
+    border-color: var(--grey);
+}
+
+button {
+    padding: 16px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    border-color: var(--grey);
+    background-color: var(--blue-dark);
+    color: var(--white);
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: var(--fluid-header);
 }
 
 ul {
@@ -80,18 +129,42 @@ li {
     flex-direction: column;
 }
 
-.newsletter__description {
-    /* REMOVE BORDER STYLES */
-    border: 2px solid red;
-}
-
-form {
-    /* REMOVE BORDER STYLES */
-    border: 3px solid blue;
-}
-
 @media (min-width: 376px) {
     body {
         background-color: var(--blue-dark);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+    .wrapper {
+        /* width: calc(100% - 80px); */
+        width: 100%;
+        max-width: 530px;
+        padding: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .wrapper {
+        /* width: calc(100% - 64px); */
+        width: 100%;
+        padding: 32px;
+        display: grid;
+        column-gap: 64px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "description image"
+            "form        image";
+    }
+
+    .newsletter__description {
+        grid-area: description;
+    }
+
+    .newsletter__form-inputs {
+        grid-area: form;
+    }
+
+    picture {
+        grid-area: image;
     }
 }

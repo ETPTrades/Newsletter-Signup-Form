@@ -33,43 +33,45 @@
   <body>
     <main>
       <article class="newsletter-container">
-        <picture>
-          <source
-            media="(max-width: 375px)"
-            srcset="./assets/images/illustration-sign-up-mobile.svg"
-          />
-          <source
-            media="(min-width: 376px) and (max-width: 1439px)"
-            srcset="assets/images/illustration-sign-up-tablet.svg"
-          />
-          <source
-            media="(min-width: 1440px)"
-            srcset="assets/images/illustration-sign-up-desktop.svg"
-          />
-          <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
-        </picture>
-        <section class="newsletter__description">
-          <h1>Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul>
-            <li>Product discovery and building what matters</li>
-            <li>Measuring to ensure updates are a success</li>
-            <li>And much more!</li>
-          </ul>
-        </section>
-        <section class="newsletter__form-inputs">
-          <form action="">
-            <div class="newsletter__email-input-container">
-              <label for="email"></label>
-                Email Address<input
-                  type="email"
-                  id="email"
-                  placeholder="email@company.com"
-              /></label>
-            </div>
-            <button type="button">Subscribe to monthly newsletter</button>
-          </form>
-        </section>
+        <div class="wrapper">
+          <picture>
+            <source
+              media="(max-width: 375px)"
+              srcset="./assets/images/illustration-sign-up-mobile.svg"
+            />
+            <source
+              media="(min-width: 376px) and (max-width: 1439px)"
+              srcset="assets/images/illustration-sign-up-tablet.svg"
+            />
+            <source
+              media="(min-width: 1440px)"
+              srcset="assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
+          </picture>
+          <section class="newsletter__description">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
+          </section>
+          <section class="newsletter__form-inputs">
+            <form action="">
+              <div class="newsletter__email-input-container">
+                <label for="email"></label>
+                  Email Address<input
+                    type="email"
+                    id="email"
+                    placeholder="email@company.com"
+                /></label>
+              </div>
+              <button type="button">Subscribe to monthly newsletter</button>
+            </form>
+          </section>
+        </div>
       </article>
     </main>
 
