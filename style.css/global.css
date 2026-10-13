@@ -112,6 +112,10 @@ form label {
     margin-block-end: 8px;
 }
 
+.newsletter__error-message {
+    color: var(--red);
+}
+
 button {
     padding: 16px;
     border: none;

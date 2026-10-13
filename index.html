@@ -19,7 +19,7 @@
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -61,7 +61,7 @@
             </ul>
           </section>
           <section class="newsletter__form-inputs">
-            <form id="form" action="">
+            <form id="form" novalidate action="">
               <div class="newsletter__email-input-container">
                 <div class="newsletter__email-input-inner-flex">
                   <label for="email">Email Address</label>
@@ -70,11 +70,13 @@
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="email@company.com"
                     autocomplete="email"
+                    required
                 /></label>
               </div>
-              <button type="button" id="button">Subscribe to monthly newsletter</button>
+              <button type="submit" id="button">Subscribe to monthly newsletter</button>
             </form>
           </section>
         </div>
