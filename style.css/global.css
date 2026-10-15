@@ -72,19 +72,22 @@ h6 {
 }
 
 .wrapper {
-    /* border: 2px solid orangered; */
-    margin-inline: auto;
-    /* width: calc(100% - 32px); */
-    width: 100%;
-    padding: 16px;
+    /* margin-inline: auto;
+    width: 100%; */
+    /* padding: 16px; */
 }
 
-.wrapper picture {
+/* .wrapper picture {
+    margin-block-end: 40px;
+} */
+
+picture {
     margin-block-end: 40px;
 }
 
 .newsletter__description {
     text-align: left;
+    padding-inline: 16px;
 }
 
 .newsletter__description>h1 {
@@ -98,6 +101,10 @@ h6 {
 .newsletter__email-input-inner-flex {
     display: flex;
     justify-content: space-between;
+}
+
+.newsletter__form-inputs {
+    padding-inline: 16px;
 }
 
 form input {
@@ -140,6 +147,7 @@ h1 {
 ul {
     all: revert;
     padding-inline-start: 25px;
+    margin-block-end: 40px;
 }
 
 li {
@@ -192,14 +200,25 @@ li {
 
     .newsletter-container {
         max-width: 608px;
-    }
-
-    .wrapper {
-        /* width: calc(100% - 80px); */
-        width: 100%;
-        max-width: 530px;
         padding: 40px;
     }
+
+    .newsletter__description {
+        padding: 0;
+    }
+
+    .newsletter__form-inputs {
+        padding: 0;
+    }
+
+    ul {
+        margin-block-end: 24px;
+    }
+
+    /* .wrapper {
+        width: 100%;
+        max-width: 530px;
+    } */
 
     form input {
         margin-block-end: 16px;
@@ -207,27 +226,46 @@ li {
 }
 
 @media (min-width: 1440px) {
-    .wrapper {
-        /* width: calc(100% - 64px); */
+    /* .wrapper {
         width: 100%;
-        padding: 32px;
         display: grid;
         column-gap: 64px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "description image"
             "form        image";
+    } */
+
+    .newsletter-container {
+        display: grid;
+        column-gap: 64px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "description image"
+            "form        image";
+        padding: 32px;
+        width: min(905px, calc(100% - 64px));
     }
 
     .newsletter__description {
         grid-area: description;
+        padding: 0;
+    }
+
+    .newsletter__description>h1 {
+        margin-block: 64px 32px;
+    }
+
+    .newsletter__description>p {
+        margin-block-end: 32px;
     }
 
     .newsletter__form-inputs {
         grid-area: form;
+        padding: 0;
     }
 
     picture {
         grid-area: image;
+        margin: 0;
     }
 
     form input {
