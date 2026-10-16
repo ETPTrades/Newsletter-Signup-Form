@@ -26,6 +26,7 @@ form.addEventListener("submit", handleFormSubmission);
 const handleDismiss = (e) => {
     success.classList.add("hidden");
     content.classList.remove("hidden");
+    errorMessage.innerText = "";
 }
 
 dismissButton.addEventListener("click", handleDismiss);
