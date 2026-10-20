@@ -5,7 +5,6 @@
     --blue-light: hsl(235, 18%, 26%);
     --red: hsl(4, 100%, 67%);
     --gradient: linear-gradient(hsl(15, 100%, 61%), hsl(346, 100%, 66%));
-    /*Fluid header text breaks to two lines between 612px width and 646px width*/
     --fluid-header: clamp(2.5rem, 2.147887323943662rem + 1.5023474178403755vw, 3.5rem);
 }
 
@@ -75,16 +74,6 @@ h6 {
     display: none;
 }
 
-/* .wrapper {
-    margin-inline: auto;
-    width: 100%; */
-/* padding: 16px;
-} */
-
-/* .wrapper picture {
-    margin-block-end: 40px;
-} */
-
 picture {
     margin-block-end: 40px;
 }
@@ -115,7 +104,6 @@ form input {
     margin-bottom: 24px;
     padding: 16px;
     border-radius: 10px;
-    border-color: var(--grey);
     border: 1px solid var(--grey);
 }
 
@@ -132,7 +120,6 @@ button {
     border: none;
     width: 100%;
     border-radius: 10px;
-    border-color: var(--grey);
     background-color: var(--blue-dark);
     color: var(--white);
     margin-bottom: 24px;
@@ -189,7 +176,7 @@ li {
 
 @media (min-width: 376px) {
     body {
-        background-color: var(--blue-dark);
+        background-color: var(--blue-light);
     }
 
     #success__modal {
@@ -231,25 +218,12 @@ li {
         margin-block-end: 24px;
     }
 
-    /* .wrapper {
-        width: 100%;
-        max-width: 530px;
-    } */
-
     form input {
         margin-block-end: 16px;
     }
 }
 
 @media (min-width: 1440px) {
-    /* .wrapper {
-        width: 100%;
-        display: grid;
-        column-gap: 64px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "description image"
-            "form        image";
-    } */
 
     .newsletter-container {
         display: grid;
@@ -284,7 +258,7 @@ li {
         margin: 0;
     }
 
-    form input {
+    /* form input {
         margin-bottom: 16px;
-    }
+    } */
 }
