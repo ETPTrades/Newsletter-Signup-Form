@@ -1,6 +1,7 @@
 content = document.querySelector(".newsletter-container");
 form = document.getElementById("form");
 emailInput = document.getElementById("email");
+userEmail = document.querySelector(".success__user-email");
 errorMessage = document.querySelector(".newsletter__error-message");
 success = document.querySelector(".success");
 modal = document.getElementById("success__modal");
@@ -18,6 +19,7 @@ const handleFormSubmission = (e) => {
     } else {
      content.classList.add("hidden");
      success.classList.remove("hidden");
+     userEmail.innerText = `${data.email}`;
      modal.showModal();
     }
 }
@@ -28,6 +30,7 @@ const handleDismiss = () => {
     success.classList.add("hidden");
     modal.close();
     errorMessage.innerText = "";
+    emailInput.value = "";
 }
 
 dismissButton.addEventListener("click", handleDismiss);
