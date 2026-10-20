@@ -48,7 +48,11 @@
             <div class="newsletter__email-input-container">
               <div class="newsletter__email-input-inner-flex">
                 <label for="email">Email Address</label>
-                <span class="newsletter__error-message"></span>
+                <span
+                  class="newsletter__error-message"
+                  role="alert"
+                  id="alert"
+                ></span>
               </div>
               <input
                 type="email"
@@ -56,6 +60,7 @@
                 name="email"
                 placeholder="email@company.com"
                 autocomplete="email"
+                aria-describedby="alert"
                 required
               />
             </div>

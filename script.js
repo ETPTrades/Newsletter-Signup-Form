@@ -9,14 +9,18 @@ dismissButton = document.querySelector(".success__dismiss");
 
 
 
+
 const handleFormSubmission = (e) => {
     e.preventDefault();
     const data = {};
     data[emailInput.name] = emailInput.value;
     
     if (!emailInput.checkValidity()) {
-        errorMessage.innerText = "Valid email required"; 
+        emailInput.setAttribute("aria-invalid", "true");
+        errorMessage.innerText = "Valid email required";
     } else {
+     emailInput.removeAttribute("aria-invalid");
+     errorMessage.innerText = "";
      content.classList.add("hidden");
      success.classList.remove("hidden");
      userEmail.innerText = `${data.email}`;
@@ -29,7 +33,6 @@ const handleDismiss = () => {
     content.classList.remove("hidden");
     success.classList.add("hidden");
     modal.close();
-    errorMessage.innerText = "";
     emailInput.value = "";
 }
 
